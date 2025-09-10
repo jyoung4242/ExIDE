@@ -54,35 +54,37 @@
 - **Auto-save:** Reordering elements triggers scene JSON auto-save.
 - **Add/Remove:** Toolbar buttons or “+ / –” icons; no right-click context menus.
 
-## 4. Asset & Graphic Management
+## 4. Asset & Console Container (Bottom Panel)
 
-### Folder Structure
+Tabbed Container with at least two tabs:
 
-- User-managed; no enforced type-based subfolders.
+Assets
 
-### Import
+Folder-based asset organization (user-managed).
 
-- Drag-and-drop into `/assets`, copied into project directory.
+Drag-and-drop import into /assets.
 
-### Sprite Sheets
+Sprite sheets with manual metadata.
 
-- User marks image as a sprite sheet.
-- Manual frame definition (width/height, rows/columns or frame count).
-- Animation definitions allowed (walk, idle, etc.).
-- Animation previews playable in editor.
-- Metadata stored in separate JSON file alongside image (e.g., `walk.png` → `walk.json`).
+Animation previews playable in-editor.
 
-### Deletion
+Metadata stored in separate JSON.
 
-- Warn if asset is used in a scene or script.
+Deletion warns if asset in use.
 
-### Asset Search/Tagging
+Asset search/tagging not supported for MVP.
 
-- Not supported for MVP.
+Optional previews: image thumbnails, audio playback, font samples.
 
-### Preview Support
+Console
 
-- Optional — image thumbnails, audio playback, font sample text.
+Displays build/run logs, warnings, and errors.
+
+Behaves like VSCode output panel.
+
+Appears automatically on build/run if errors or warnings occur.
+
+Expandable in future for additional tabs (e.g., Search, Profiler, Debugger).
 
 ## 5. Inspector
 
