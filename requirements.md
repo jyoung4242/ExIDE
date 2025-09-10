@@ -138,6 +138,34 @@ Expandable in future for additional tabs (e.g., Search, Profiler, Debugger).
 
 - Not supported (editor does not auto-detect external changes).
 
+## 8. App Default State (No Project Open)
+
+On Startup:
+
+Modal popup opens automatically.
+
+Options inside modal:
+
+Load Last Project (auto-selected if available).
+
+List All Available Projects (shows project directories with metadata/config JSON).
+
+Create New Project (prompts for name + directory).
+
+Behavior:
+
+If user cancels, app stays idle with disabled editor sections.
+
+Modal can be reopened from File > Open Project menu at any time.
+
+Persistence:
+
+Last opened project path saved in global config.
+
+If project folder is missing/corrupt → gracefully fall back to project list modal.
+
+## 9. Project Directory Structure
+
 ```bash
 MyExcaliburProject/
 ├─ config.json                 # Project-wide settings
@@ -173,3 +201,51 @@ MyExcaliburProject/
 └─ ...
 
 ```
+
+10. Color Themes
+
+Modes:
+
+Global default theme (set at the app level).
+
+Project-specific overrides (stored in config.json).
+
+Theme Structure (tiers of colors):
+
+Primary → Used for main UI accents (buttons, tab highlights, active selections).
+
+Secondary → Used for panel headers, hover states, and less prominent accents.
+
+Tertiary → Used for background gradients, dividers, and optional highlights.
+
+Dark Mode Defaults (built-in):
+
+Background: #1e1e1e (editor canvas/panels).
+
+Primary: #007acc (tabs, active state).
+
+Secondary: #3c3c3c (splitters, headers).
+
+Tertiary: #252526 (sub-panels, inactive states).
+
+Text: #d4d4d4 (default font color).
+
+Customization:
+
+User can open Project Settings → Appearance Tab to change theme colors.
+
+Each color tier uses a color picker (RGB/Hex input).
+
+Reset-to-default option included.
+
+Persistence:
+
+Saved in project’s config.json under "theme".
+
+Example:
+
+{ "theme": { "primary": "#007acc", "secondary": "#3c3c3c", "tertiary": "#252526", "darkMode": true } }
+
+Scope:
+
+Theme applies instantly across all panels when changed.
